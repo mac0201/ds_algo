@@ -1,6 +1,15 @@
 from node import Node
 
-
+""" 
+    Functions include:
+        - Inserting a node at end of list (tail)
+        - Inserting a node at beginning of list (head)
+        - Inserting a node at specified position, shifting the current node to the right
+        - Inserting multiple nodes (values) to the list
+        - Removing a node that contains specified value
+        - Removing multiple nodes that contain specified value
+        - Removing a node at specified position
+"""
 class LinkedList:
     def __init__(self, values=None) -> None:
         self.head = None
@@ -147,6 +156,8 @@ print(ll.stringify())
 ll.insert_beginning(0)
 
 ll.insert_beginning(0)
+
+ll.add_multiple([45, 46, 47])
 
 print(ll.stringify())
 
