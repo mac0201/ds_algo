@@ -268,6 +268,39 @@ class LinkedList:
 
         print(' -- Swap done.')
 
+    def nth_last_node(self, n):
+        # e.g. n = 2, so return second to last node
+        # 1, 2, 3, 4, 5 -> returns 4
+        current = self.head
+        nth_last = None
+        count = 1
+        if current == None:
+            return
+        if n == 1:
+            return self.tail
+        while current:
+            if (count >= n):
+                if nth_last == None:
+                    nth_last = self.head
+                else:
+                    nth_last = nth_last.next
+            count+=1
+            current = current.next
+        print(f'nth last node is {nth_last.value}')
+        return nth_last
+
+    def get_middle_node(self):
+        fast = self.head
+        slow = self.head
+        while fast:
+            fast = fast.next
+            if fast != None:
+                fast = fast.next
+                slow = slow.next
+        print(f'The middle node is: {slow.value}')
+        return slow
+
+
 
 
 ll = LinkedList([1, 2, 14, 3.3, 3, 4, 10])
@@ -293,5 +326,13 @@ ll.stringify()
 ll.swap(5, 14)
 
 ll.stringify()
+
+print(ll.nth_last_node(3))
+
+ll.insert_at_position(5, 99)
+
+ll.stringify()
+
+ll.get_middle_node()
 
 print('Total nodes: ' + str(ll.get_total_nodes()))
