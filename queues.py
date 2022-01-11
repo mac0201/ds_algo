@@ -16,11 +16,11 @@ class Queue:
         return self.head.value
 
     def is_empty(self):
-        return True if self.size == 0 else False
+        return self.size == 0
 
     def has_space(self):
         if self.max_size:
-            return True if self.max_size > self.size else False
+            return self.max_size > self.size
         return True
 
     def get_size(self):
@@ -41,9 +41,8 @@ class Queue:
             self.tail = new
         self.size += 1
         print(f'Added {new.value} to the queue.')
-        return new.value
 
-    # Remove a node from the front of the queue (head)
+    # Return and remove a node from the front of the queue (head)
     def dequeue(self):
         # prevent underflow
         if self.is_empty():
