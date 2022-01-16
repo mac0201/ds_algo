@@ -19,6 +19,7 @@ class Stack:
     def has_space(self):
         return self.max_size > self.size
 
+    # Add new node to the top of stack
     def push(self, value):
         if not self.has_space():
             print('Maximum size reached.')
@@ -29,6 +30,7 @@ class Stack:
         self.size += 1
         print(f'Pushed {new.value}')
 
+    # Remove the top node from stack
     def pop(self):
         if self.is_empty():
             print('Stack empty.')
